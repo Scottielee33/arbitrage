@@ -35,7 +35,6 @@ if elements:
 else:
     print("No elements found with the specified class.")
 
-print(ls)
 data = []
 
 # Loop through the main list
@@ -56,77 +55,16 @@ for sublist in ls:
 
 # Convert the new list into a pandas DataFrame
 df_toto = pd.DataFrame(data, columns=['Name1', 'Name2', 'Odd1', 'Odd2'])
+# Replace commas with dots in the 'Odd1' and 'Odd2' columns
+df_toto['Odd1'] = df_toto['Odd1'].str.replace(',', '.')
+df_toto['Odd2'] = df_toto['Odd2'].str.replace(',', '.')
+
+# Convert the 'Odd1' and 'Odd2' columns to float
+df_toto['Odd1'] = df_toto['Odd1'].astype(float)
+df_toto['Odd2'] = df_toto['Odd2'].astype(float)
 
 # Remove duplicates
 df_toto = df_toto.drop_duplicates()
 
 print(df_toto)
-
-
-# Convert the new list into a pandas DataFrame
-df = pd.DataFrame(data, columns=['Name1', 'Name2', 'Odd1', 'Odd2'])
-
-print(df)
-
-# Close the WebDriver
 driver.quit()
-
-# Initialize the Firefox WebDriver
-driver = webdriver.Firefox()
-
-# Define a WebDriverWait instance with a 10-second timeout
-wait = WebDriverWait(driver, 10)
-
-# Open the specified webpage
-driver.get('https://www.unibet.nl/betting/sports/filter/tennis/all/matches')
-
-# Define a WebDriverWait instance with a 10-second timeout
-wait = WebDriverWait(driver, 10)
-
-# Wait for at least one element with the class 'c539a' to be present
-wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.c539a')))
-
-# Find all elements with class 'c539a'
-elements = driver.find_elements(By.CSS_SELECTOR, '.c539a')
-
-wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '._8e013')))
-scores = driver.find_elements(By.CSS_SELECTOR, '._8e013')
-
-data = []
-
-# Iterate over the names and scores in steps of 2
-for i in range(0, len(elements), 2):
-    # Get the names of the two players
-    player1 = elements[i].text
-    player2 = elements[i+1].text
-
-    # Convert names from "Lastname, Firstname" to "Firstname Lastname"
-    player1 = ' '.join(player1.split(', ')[::-1])
-    player2 = ' '.join(player2.split(', ')[::-1])
-
-    # Exclude the names that include a '/'
-    if '/' in player1 or '/' in player2:
-        continue
-
-    # Get the odds for the two players
-    odds1 = scores[i].text
-    odds2 = scores[i+1].text
-
-    # Append the data to the list
-    data.append([player1, player2, odds1, odds2])
-
-# Convert the list into a pandas DataFrame
-df_unibet = pd.DataFrame(data, columns=['Player1', 'Player2', 'Odds1', 'Odds2'])
-
-# Remove duplicates
-df_unibet = df_unibet.drop_duplicates()
-
-print(df_unibet)
-
-driver.quit()
-
-# Save the df_toto DataFrame to a CSV file
-df_toto.to_csv('df_toto.csv', index=False)
-
-# Save the df_unibet DataFrame to a CSV file
-df_unibet.to_csv('df_unibet.csv', index=False)

@@ -23,35 +23,43 @@ wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.c539a')))
 
 # Find all elements with class 'c539a'
 elements = driver.find_elements(By.CSS_SELECTOR, '._57b37+ ._6dae4 ._8e013 , .c539a')
-data = []
 
-# Iterate over the elements in steps of 4
-i = 0
-while i < len(elements):
-    # Get the names of the two players
-    player1 = elements[i].text
-    player2 = elements[i+1].text
+# Initialize an empty list to store the matches
+matches = []
 
-    # Convert names from "Lastname, Firstname" to "Firstname Lastname"
-    player1 = ' '.join(player1.split(', ')[::-1])
-    player2 = ' '.join(player2.split(', ')[::-1])
+# Initialize variables to store the current match data
+player1 = player2 = odd1 = odd2 = None
 
-    # Exclude the names that include a '/'
-    if '/' in player1 or '/' in player2:
-        i += 2
-        continue
+# Iterate over the elements
+for element in elements:
+    text = element.text
 
-    # Check if the third and fourth elements are odds
-    try:
-        odds1 = float(elements[i+2].text)
-        odds2 = float(elements[i+3].text)
-        i += 4
-    except ValueError:
-        # If they are not odds, skip this group and consider them as next players
-        i += 2
-        continue
+    # If we're expecting a player name
+    if not player1 or not player2:
+        # If the text can be converted to a float, it's an odd, so we skip this match
+        try:
+            float(text)
+            player1 = player2 = odd1 = odd2 = None
+        except ValueError:
+            # If the text can't be converted to a float, it's a player name
+            if not player1:
+                player1 = text
+            else:
+                player2 = text
+    # If we're expecting an odd
+    else:
+        # If the text can't be converted to a float, it's a player name, so we skip this match
+        try:
+            odd = float(text)
+            if not odd1:
+                odd1 = odd
+            else:
+                odd2 = odd
+                matches.append((player1, odd1, player2, odd2))
+                player1 = player2 = odd1 = odd2 = None
+        except ValueError:
+            player1 = player2 = odd1 = odd2 = None
 
-    # Append the data to the list
-    data.append([player1, player2, odds1, odds2])
+df = pd.DataFrame(matches, columns=['Player 1', 'Odds 1', 'Player 2', 'Odds 2'])
 
-print(data)
+driver.quit()
