@@ -1,29 +1,44 @@
-Name1,Name2,Odd1,Odd2
-Luciano Darderi,Lorenzo Musetti,3.2,1.33
-Flavio Cobolli,Alejandro Tabilo,4.25,1.22
-Quentin Halys,Karen Khachanov,3.75,1.26
-Holger Rune,Thiago Seyboth Wild,1.32,3.3
-Jack Draper,Cameron Norrie,1.29,3.5
-Danielle Collins,Dalma Galfi,1.06,8.5
-Jule Niemeier,Elina Svitolina,2.28,1.61
-Caroline Wozniacki,Leylah Annie Fernandez,2.37,1.62
-Giovanni Mpetshi Perricard,Yoshihito Nishioka,1.56,2.5
-Emil Ruusuvuori,Stefanos Tsitsipas,4.5,1.23
-Marcos Giron,Alexander Zverev,6.75,1.12
-Elena Rybakina,Laura Siegemund,1.04,12.0
-Iga Swiatek,Petra Martic,1.02,18.0
-Elina Avanesyan,Liudmila Samsonova,4.0,1.26
-Roberto Bautista Agut,Fabio Fognini,1.45,2.85
-Brandon Nakashima,Ugo Humbert,2.03,1.83
-Jan-Lennard Struff,Daniil Medvedev,2.55,1.54
-Tommy Paul,Alexander Bublik,1.65,2.3
-Carlos Alcaraz,Frances Tiafoe,1.06,10.0
-Jannik Sinner,Miomir Kecmanovic,1.03,15.0
-Diana Shnaider,Emma Navarro,2.11,1.77
-Lulu Sun,Lin Zhu,2.13,1.75
-Daria Kasatkina,Paula Badosa,1.59,2.43
-Dayana Yastremska,Donna Vekic,3.2,1.37
-Marta Kostyuk,Madison Keys,3.45,1.33
-Jasmine Paolini,Bianca Andreescu,1.77,2.11
-Emma Raducanu,Maria Sakkari,1.69,2.22
-Barbora Krejcikova,Jessica Bouzas Maneiro,1.42,3.0
+,Name1,Name2,Odd1,Odd2
+0,Brandon Nakashima,Ugo Humbert,1.98,1.8
+2,Tommy Paul,Alexander Bublik,1.45,2.7
+4,Roberto Bautista Agut,Fabio Fognini,1.39,2.95
+6,Carlos Alcaraz,Frances Tiafoe,1.05,12.5
+8,Jasmine Paolini,Bianca Andreescu,1.53,2.46
+10,Lulu Sun,Lin Zhu,2.11,1.7
+12,Daria Kasatkina,Paula Badosa,2.51,1.51
+14,Diana Shnaider,Emma Navarro,2.26,1.62
+16,Gille S / Vliegen J,Diaz Acosta F / Muller A,1.04,9.5
+18,Baez S / Brown Du,Nys H / Zielinski J,6.75,1.08
+20,Andreozzi G / Reyes-Varela M A,Glasspool L / Rojer J-J,4.5,1.18
+22,Cash J / Galloway R,Arribage T / Daniell M,1.08,7.0
+24,Gonzalez M / Molteni A,Tsitsipas P / Tsitsipas S,1.16,5.75
+26,Grigor Dimitrov,Gael Monfils,1.32,3.55
+28,Jan-Lennard Struff,Daniil Medvedev,2.55,1.53
+30,Denis Shapovalov,Ben Shelton,2.07,1.8
+32,Jannik Sinner,Miomir Kecmanovic,1.03,15.5
+34,Marta Kostyuk,Madison Keys,4.0,1.27
+36,Dayana Yastremska,Donna Vekic,3.25,1.37
+38,Emma Raducanu,Maria Sakkari,1.74,2.15
+40,Sonay Kartal,Coco Gauff,8.5,1.08
+42,Bhambri Y / Olivetti A,Krawietz K / Puetz T,2.32,1.59
+44,Heliovaara H / Patten H,Martinez P / Munar J,1.12,6.0
+46,Mahut N / Mansouri S,Kokkinakis T / Shapovalov D,2.2,1.65
+48,Arneodo R / Verbeek S,Arevalo M / Pavic M,8.25,1.06
+50,Martin F / Middelkoop M,Purcell M / Thompson J,3.95,1.24
+52,Borges N / Rinderknech A,Broom C / Fery A,1.65,2.21
+54,Ofner S / Weissborn T-S,Hidalgo D / Tabilo A,2.43,1.54
+56,Arthur Fils,Roman Safiullin,1.65,2.31
+58,Francisco Comesana,Lorenzo Musetti,4.5,1.22
+60,Alexei Popyrin,Novak Djokovic,6.75,1.12
+62,Cameron Norrie,Alexander Zverev,5.25,1.18
+64,Giovanni Mpetshi Perricard,Emil Ruusuvuori,1.64,2.33
+66,Holger Rune,Quentin Halys,1.22,4.5
+68,Lucas Pouille,Alex De Minaur,10.5,1.06
+70,Anna Kalinskaya,Liudmila Samsonova,2.02,1.84
+72,Barbora Krejcikova,Jessica Bouzas Maneiro,1.46,2.8
+74,Bernarda Pera,Jelena Ostapenko,4.0,1.27
+76,Harriet Dart,Xinyu Wang,2.8,1.46
+78,Iga Swiatek,Yulia Putintseva,1.12,6.75
+80,Ons Jabeur,Elina Svitolina,1.5,2.7
+82,Danielle Collins,Beatriz Haddad Maia,1.6,2.41
+84,Gonzalez S / Roger-Vasselin E,Eubanks C / King E,1.32,3.3

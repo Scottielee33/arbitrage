@@ -1,19 +1,21 @@
-Name1,Odd1,Name2,Odd2
-"Cobolli, Flavio",4.5,"Tabilo, Alejandro",1.19
-"Halys, Quentin",3.6,"Khachanov, Karen",1.28
-"Rune, Holger Vitus Nødskov",1.29,"Seyboth Wild, Thiago",3.5
-"Fritz, Taylor",1.04,"Rinderknech, A",12.5
-"Kokkinakis, Thanasi",1.47,"Pouille, Lucas",2.6
-"Draper, Jack",1.26,"Norrie, Cameron",3.85
-"Mpetshi Perricard, Giovanni",1.56,"Nishioka, Yoshihito",2.45
-"Ruusuvuori, Emil",4.2,"Tsitsipas, Stefanos",1.23
-"Giron, Marcos",6.5,"Zverev, Alexander",1.11
-"Struff, Jan-Lennard",2.55,"Medvedev, Daniil",1.52
-"Bautista Agut, Roberto",1.44,"Fognini, Fabio",2.8
-"Paul, Tommy",1.62,"Bublik, Alexander",2.3
-"Nakashima, Brandon",2.02,"Humbert, Ugo",1.8
-"Alcaraz, Carlos",1.07,"Tiafoe, Frances",8.5
-"Escobedo, Ernesto",2.8,"Seggerman, Ryan",1.4
-"Bellier, Antoine",6.5,"Basavareddy, Nishesh",1.1
-"Kwiatkowski, Thai-Son",2.54,"Brouwer, Gijs",1.5
-"Vandecasteele, Quinn",2.7,"Tomic, Bernard",1.45
+,Name1,Odd1,Name2,Odd2
+0,Roberto Bautista Agut,1.38,Fabio Fognini,2.95
+1,Brandon Nakashima,1.98,Ugo Humbert,1.78
+2,Tommy Paul,1.4,Alexander Bublik,2.85
+3,Carlos Alcaraz,1.05,Frances Tiafoe,11.0
+4,Grigor Dimitrov,1.34,Gael Monfils,3.3
+5,Denis Shapovalov,1.96,Ben Shelton,1.85
+6,Jan-Lennard Struff,2.48,Daniil Medvedev,1.54
+7,Jannik Sinner,1.02,Miomir Kecmanovic,12.5
+8,Cameron Norrie,5.0,Alexander Zverev,1.17
+9,Taylor Fritz,1.22,Alejandro Tabilo,4.3
+10,Alexei Popyrin,6.1,Novak Djokovic,1.12
+11,Francisco Comesana,4.4,Lorenzo Musetti,1.2
+12,Giovanni Mpetshi Perricard,1.64,Emil Ruusuvuori,2.25
+13,Arthur Fils,1.61,Roman Safiullin,2.32
+14,Holger Vitus Nødskov Rune,1.23,Quentin Halys,4.1
+15,Lucas Pouille,10.0,Alex De Minaur,1.06
+16,Learner Tien,1.41,Philip Sekulic,2.85
+17,Ryan Seggerman,2.75,Gijs Brouwer,1.44
+18,Bernard Tomic,2.95,Nishesh Basavareddy,1.38
+19,Jeffrey John Wolf,1.29,Stefan Kozlov,3.55
