@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+import time
 import pandas as pd
 
 # Iterate over the elements
@@ -15,6 +18,34 @@ def scrape_unibet(driver):
 
     # Open the specified webpage
     driver.get('https://www.unibet.nl/betting/sports/filter/tennis/all/matches')
+
+    # Wait for the button with the specified CSS selector to be present
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '._0175e')))
+
+    # Find all buttons with the specified CSS selector
+    buttons_type = driver.find_elements(By.CSS_SELECTOR, '._0175e')
+    buttons_type_text = [button.text for button in buttons_type]
+
+    # Skip the first 4 buttons and click each of the rest
+    for button in buttons_type[2:]:
+        button.click()
+
+    buttons_tournament = driver.find_elements(By.CSS_SELECTOR, '.fd7df')
+
+    skip_next = False
+    for button in buttons_tournament[4:]:
+        # Get the button name
+        button_name = button.text
+
+        # If the button name is in `button_type`, set the flag to skip the next button
+        if button_name in buttons_type_text:
+            skip_next = True
+        # If the flag is set, skip this button and unset the flag
+        elif skip_next:
+            skip_next = False
+        # Otherwise, click the button
+        else:
+            ActionChains(driver).move_to_element(button).click(button).perform()
 
     # Wait for at least one element with the class 'c539a' to be present
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.c539a')))
@@ -40,9 +71,9 @@ def scrape_unibet(driver):
             except ValueError:
                 # If the text can't be converted to a float, it's a player name
                 if not player1:
-                    player1 = flip_name(text)
+                    player1 = text.split(', ')[0]
                 else:
-                    player2 = flip_name(text)
+                    player2 = text.split(', ')[0]
         # If we're expecting an odd
         else:
             # If the text can't be converted to a float, it's a player name, so we skip this match
@@ -59,3 +90,7 @@ def scrape_unibet(driver):
 
     df = pd.DataFrame(matches, columns=['Name1', 'Odd1', 'Name2', 'Odd2'])
     return df
+
+driver = webdriver.Chrome()
+df = scrape_unibet(driver)
+print(df)
