@@ -71,9 +71,23 @@ def scrape_unibet(driver):
             except ValueError:
                 # If the text can't be converted to a float, it's a player name
                 if not player1:
-                    player1 = text.split(', ')[0]
+                    name = text
+                    if '/' in name:
+                        # It's a double game, so we extract the last names
+                        names = name.split('/')
+                        player1 = names[0].split(', ')[0] + ' & ' + names[1].split(', ')[0]
+                    else:
+                        name = text.split(', ')[0]
+                        player1 = name
                 else:
-                    player2 = text.split(', ')[0]
+                    name = text
+                    if '/' in name:
+                        # It's a double game, so we extract the last names
+                        names = name.split('/')
+                        player2 = names[0].split(', ')[0] + ' & ' + names[1].split(', ')[0]
+                    else:
+                        name = text.split(', ')[0]
+                        player2 = name
         # If we're expecting an odd
         else:
             # If the text can't be converted to a float, it's a player name, so we skip this match
@@ -89,6 +103,9 @@ def scrape_unibet(driver):
                 player1 = player2 = odd1 = odd2 = None
 
     df = pd.DataFrame(matches, columns=['Name1', 'Odd1', 'Name2', 'Odd2'])
+    df['Match'] = df['Name1'] + ' | ' + df['Name2']
+    df = df.drop(['Name1', 'Name2'], axis=1)
+    df = df.reindex(['Match', 'Odd1', 'Odd2'], axis=1)
     return df
 
 driver = webdriver.Chrome()
