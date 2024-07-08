@@ -3,7 +3,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-import time
 import pandas as pd
 
 # Iterate over the elements
@@ -71,23 +70,27 @@ def scrape_unibet(driver):
             except ValueError:
                 # If the text can't be converted to a float, it's a player name
                 if not player1:
-                    name = text
-                    if '/' in name:
+                    if '/' in text:
                         # It's a double game, so we extract the last names
-                        names = name.split('/')
-                        player1 = names[0].split(', ')[0] + ' & ' + names[1].split(', ')[0]
+                        names = text.split('/')
+                        players = [names[0].split(', ')[0], names[1].split(', ')[0]]
+                        players.sort()
+                        player1 = ' & '.join(players)
                     else:
                         name = text.split(', ')[0]
-                        player1 = name
+                        player1 = name.split()[-1] if len(name.split()) > 1 else name
                 else:
-                    name = text
-                    if '/' in name:
+                    if '/' in text:
                         # It's a double game, so we extract the last names
-                        names = name.split('/')
-                        player2 = names[0].split(', ')[0] + ' & ' + names[1].split(', ')[0]
+                        names = text.split('/')
+                        players = [names[0].split(', ')[0], names[1].split(', ')[0]]
+                        players.sort()
+                        player2 = ' & '.join(players)
                     else:
-                        name = text.split(', ')[0]
-                        player2 = name
+                        names = text.split(', ')
+                        names.sort()
+                        name = names[0]
+                        player2 = name.split()[-1] if len(name.split()) > 1 else name
         # If we're expecting an odd
         else:
             # If the text can't be converted to a float, it's a player name, so we skip this match
@@ -103,11 +106,13 @@ def scrape_unibet(driver):
                 player1 = player2 = odd1 = odd2 = None
 
     df = pd.DataFrame(matches, columns=['Name1', 'Odd1', 'Name2', 'Odd2'])
-    df['Match'] = df['Name1'] + ' | ' + df['Name2']
-    df = df.drop(['Name1', 'Name2'], axis=1)
+    df = df.drop_duplicates()
+    df['Match'] = df[['Name1', 'Name2']].apply(lambda x: ' | '.join(sorted(x)), axis=1)
+    df[['Odd1', 'Odd2']] = df.apply(lambda x: pd.Series([x['Odd2'], x['Odd1']] if x['Name1'] > x['Name2'] else [x['Odd1'], x['Odd2']]), axis=1)
     df = df.reindex(['Match', 'Odd1', 'Odd2'], axis=1)
     return df
 
-driver = webdriver.Chrome()
-df = scrape_unibet(driver)
-print(df)
+if __name__ == "__main__":
+    driver = webdriver.Chrome()
+    df = scrape_unibet(driver)
+    print(df)

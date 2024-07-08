@@ -1,21 +1,71 @@
-,Name1,Odd1,Name2,Odd2
-0,Roberto Bautista Agut,1.38,Fabio Fognini,2.95
-1,Brandon Nakashima,1.98,Ugo Humbert,1.78
-2,Tommy Paul,1.4,Alexander Bublik,2.85
-3,Carlos Alcaraz,1.05,Frances Tiafoe,11.0
-4,Grigor Dimitrov,1.34,Gael Monfils,3.3
-5,Denis Shapovalov,1.96,Ben Shelton,1.85
-6,Jan-Lennard Struff,2.48,Daniil Medvedev,1.54
-7,Jannik Sinner,1.02,Miomir Kecmanovic,12.5
-8,Cameron Norrie,5.0,Alexander Zverev,1.17
-9,Taylor Fritz,1.22,Alejandro Tabilo,4.3
-10,Alexei Popyrin,6.1,Novak Djokovic,1.12
-11,Francisco Comesana,4.4,Lorenzo Musetti,1.2
-12,Giovanni Mpetshi Perricard,1.64,Emil Ruusuvuori,2.25
-13,Arthur Fils,1.61,Roman Safiullin,2.32
-14,Holger Vitus Nødskov Rune,1.23,Quentin Halys,4.1
-15,Lucas Pouille,10.0,Alex De Minaur,1.06
-16,Learner Tien,1.41,Philip Sekulic,2.85
-17,Ryan Seggerman,2.75,Gijs Brouwer,1.44
-18,Bernard Tomic,2.95,Nishesh Basavareddy,1.38
-19,Jeffrey John Wolf,1.29,Stefan Kozlov,3.55
+Match,Odd1,Odd2
+Giovanni | Musetti,1.98,1.82
+Alex | Fils,1.19,4.7
+Alexander | Fritz,1.53,2.5
+Djokovic | Rune,1.3,3.5
+Alcaraz | Paul,1.25,3.95
+Daniil | Sinner,4.0,1.24
+Anna | Rybakina,4.0,1.25
+Svitolina | Wang,1.49,2.6
+Jelena | Putintseva,1.72,2.12
+Barbora | Collins,2.7,1.46
+Donna | Sun,1.34,3.3
+Emma | Paolini,1.56,2.43
+Frantzen & Jebens | Glasspool & Rojer,2.22,1.64
+Heliovaara & Patten | Matos & Melo,1.62,2.15
+Arevalo & Pavic | Doumbia & Reboul,1.33,3.25
+Baez & Brown | Granollers & Zeballos,6.5,1.09
+Eubanks & King | Skupski & Venus,3.4,1.3
+Lammons & Withrow | McDonald & Shelton,1.5,2.5
+Mies & Smith | Purcell & Thompson,2.8,1.4
+Broom & Fery | Gonzalez & Molteni,2.9,1.38
+Fernandez & Shibahara | Siniakova & Townsend,13.0,1.03
+Babos & Kichenok | Muhammad & Sutjiadi,1.8,1.97
+Kenin & Mattek-Sands | Mertens & Su-Wei Hsieh,2.75,1.4
+Errani & Paolini | Gauff & Pegula,2.9,1.4
+Dabrowski & Routliffe | Kostyuk & Ruse,1.53,2.35
+Hao-Ching Chan & Kudermetova | Krejcikova & Siegemund,2.75,1.4
+Christie & Johnson | Gonzalez & Olmos,3.05,1.36
+Bucsa & Martin | Dart & Glasspool,2.25,1.62
+Kichenok & Pavic | Melichar-Martinez & Peers,1.62,2.25
+Eikeri & Gonzalez | Mattek-Sands & Rojer,2.25,1.62
+Barrientos & Kato | Murray & Townsend,2.5,1.5
+Ebden & Perez | Molteni & Muhammad,1.22,4.1
+Arevalo & Shuai Zhang | Ram & Volynets,1.44,2.7
+Gille & Kichenok | Salisbury & Watson,2.37,1.57
+Ipunesso | Osafune,8.5,1.06
+Kawaguchi | Qu,1.07,8.0
+Alvarez | D'Agostino,1.6,2.2
+Andrej | Giacomini,1.22,3.9
+Buldorini | Ferrari,2.6,1.45
+Domingues | Ribecai,1.65,2.15
+Ferguson | Jirat,1.87,1.85
+Sim | Ziegann,1.18,4.5
+Anthony | Bazilevskiy,5.0,1.15
+Liu | Ziheng,3.85,1.23
+Klintcharov | Zheng,1.12,6.0
+Hongyu | Lim,3.45,1.28
+Kastsiukevich | Zeng,3.75,1.24
+Fedorov | Pang,1.95,1.77
+Li | Rebecca,2.08,1.73
+Starodubtseva | Zavatska,1.52,2.5
+Persson | Tamara,3.15,1.35
+Chirico | Renata,2.95,1.4
+Bulgaru | Paquet,2.43,1.54
+Martina | Sharma,1.5,2.55
+Korpatsch | Seidel,1.82,1.96
+Carle | Masarova,2.0,1.79
+Erjavec | Townsend,2.23,1.64
+Baindl | Carole,1.38,3.0
+Jorge | Margaux,1.64,2.23
+Akugue | Mateas,1.64,2.23
+Jenny | Lamens,4.2,1.23
+Bronzetti | Simona,1.47,2.7
+Ciric-Bagaric | Jakupovic,1.28,3.7
+Amandine | Janicijevic,1.9,1.88
+Albie | Gormaz,2.85,1.42
+Kudermetova | Mayar,4.4,1.22
+Amandine | Shymanovich,4.0,1.22
+Conny | Gao,2.55,1.48
+Caroline | Pridankina,2.55,1.48
+Martynov | Smith,2.45,1.5

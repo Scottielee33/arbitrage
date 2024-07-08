@@ -27,7 +27,7 @@ def scrape_livebet(driver):
     # Click on each button
     for button in buttons:
         button.click()
-        time.sleep(0.1)
+        time.sleep(0.2)
         away_teams = driver.find_elements(By.CSS_SELECTOR, '.away_team')
         home_teams = driver.find_elements(By.CSS_SELECTOR, '.home_team')
         points2 = driver.find_elements(By.CSS_SELECTOR, '.point2')
@@ -39,7 +39,8 @@ def scrape_livebet(driver):
         all_points2.extend([point.text for point in points2 if point.text != ''])
         all_points1.extend([point.text for point in points1 if point.text != ''])
 
-    driver.quit()
+    print(len(all_away_teams), len(all_home_teams), len(all_points2), len(all_points1))
+
     # Create a DataFrame
     df = pd.DataFrame({
         'Name1': all_home_teams,
@@ -48,9 +49,34 @@ def scrape_livebet(driver):
         'Odd2': all_points2
     })
 
-    # Return the DataFrame
+    for row in df.itertuples():
+        if '/' in row.Name1:
+            split_names = row.Name1.split('/')
+            sorted_names = sorted([split_names[0].split()[0], split_names[1].split()[0]])
+            df.at[row.Index, 'Name1'] = ' & '.join(sorted_names)
+        else:
+            if '.' in row.Name1:
+                df.at[row.Index, 'Name1'] = row.Name1.split(' ')[0].strip()
+            else:
+                df.at[row.Index, 'Name1'] = row.Name1.split(' ')[1].strip()
+        if '/' in row.Name2:
+            split_names = row.Name2.split('/')
+            sorted_names = sorted([split_names[0].split()[0], split_names[1].split()[0]])
+            df.at[row.Index, 'Name2'] = ' & '.join(sorted_names)
+        else:
+            if '.' in row.Name2:
+                df.at[row.Index, 'Name2'] = row.Name2.split(' ')[0].strip()
+            else:
+                df.at[row.Index, 'Name2'] = row.Name2.split(' ')[1].strip()
+
+    df['Match'] = df[['Name1', 'Name2']].apply(lambda x: ' | '.join(sorted(x)), axis=1)
+    df[['Odd1', 'Odd2']] = df.apply(lambda x: pd.Series([x['Odd2'], x['Odd1']] if x['Name1'] > x['Name2'] else [x['Odd1'], x['Odd2']]), axis=1)
+    df['Odd1'] = pd.to_numeric(df['Odd1'], errors='coerce')
+    df['Odd2'] = pd.to_numeric(df['Odd2'], errors='coerce')
+    df = df.reindex(['Match', 'Odd1', 'Odd2'], axis=1)
     return df
 
-driver = webdriver.Chrome()
-df = scrape_livebet(driver)
-print(df)
+if __name__ == "__main__":
+    driver = webdriver.Chrome()
+    df = scrape_livebet(driver)
+    print(df)
