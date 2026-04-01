@@ -1,0 +1,11 @@
+# Cron jobs for Amsterdam timezone (CET/CEST)
+# Format: minute hour day month day-of-week command
+
+# Run at 7:00 AM Amsterdam time
+0 7 * * * true
+
+# Run at 12:01 PM Amsterdam time
+1 12 * * * true
+
+# Run at 5:02 PM (1702) Amsterdam time
+2 17 * * * true
