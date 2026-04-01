@@ -9,3 +9,6 @@
 
 # Run at 5:02 PM (1702) Amsterdam time
 2 17 * * * true
+
+# Run "say hello" every 5 hours
+0 */5 * * * echo "Hello"
